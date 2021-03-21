@@ -1,4 +1,4 @@
-# Pacman Factory
+# Pacmen Factory
 > Create as many Pacman as you want
 
 ## Description
