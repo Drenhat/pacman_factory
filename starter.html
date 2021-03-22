@@ -7,6 +7,7 @@
     ];
     var direction = 0;
     const pacMen = []; // This array holds all the pacmen
+    const ghost = [];
 
     function setToRandom(scale) {
         return {
@@ -24,7 +25,31 @@
         let newimg = document.createElement('img');
         newimg.style.position = 'absolute';
         newimg.src = 'PacMan1.png';
-        newimg.width = 100;
+        newimg.width = Math.random() * 150;
+        //
+        // set position here 
+        newimg.style.left = position.x;
+        newimg.style.top = position.y;
+
+        // add new Child image to game
+        game.appendChild(newimg);
+        // return details in an object
+        return {
+            position,
+            velocity,
+            newimg
+        }
+    }
+
+    function makeGhost() {
+        let velocity = setToRandom(10); // {x:?, y:?}
+        let position = setToRandom(200);
+        // Add image to div id = game
+        let game = document.getElementById('game');
+        let newimg = document.createElement('img');
+        newimg.style.position = 'absolute';
+        newimg.src = 'ghost.svg';
+        newimg.width = Math.random() * 150;
         //
         // set position here 
         newimg.style.left = position.x;
@@ -50,6 +75,14 @@
             item.newimg.style.left = item.position.x;
             item.newimg.style.top = item.position.y;
         })
+        ghost.forEach((item) => {
+            checkCollisions(item)
+            item.position.x += item.velocity.x;
+            item.position.y += item.velocity.y;
+
+            item.newimg.style.left = item.position.x;
+            item.newimg.style.top = item.position.y;
+        })
         setTimeout(update, 20);
     }
 
@@ -66,11 +99,18 @@
     function makeOne() {
         pacMen.push(makePac()); // add a new PacMan
     }
+
+    function makeOneGhost() {
+        ghost.push(makeGhost()); // add a new PacMan
+    }
+
+
 </SCRIPT>
 
 <body>
     <div id='game'>
         <button onclick='makeOne()' width='200' height='30'>Add PacMan</button>
+        <button onclick='makeOneGhost()' width='200' height='30'>Add Ghost</button>
         <button onclick='update()' width='200' height='30'>Start Game</button>
 
     </div>
