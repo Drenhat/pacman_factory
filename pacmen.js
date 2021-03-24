@@ -24,7 +24,7 @@ var pos = 0;
         let game = document.getElementById('game');
         let newimg = document.createElement('img');
         newimg.style.position = 'absolute';
-        newimg.src = './images/Pacman1.png';
+        newimg.src = './images/PacMan1.png';
         newimg.width = Math.random() * 150;
         //
         // set position here - whitout the string, the left property can not be changed
