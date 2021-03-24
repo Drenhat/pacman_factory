@@ -2,7 +2,7 @@
 > Create as many Pacmen and ghost as you want
 
 ## Description
-> This project show three buttons on the screen. One let you add more pacmen on the screen at a random position. The second one let you create ghosts. The last one make them move.
+> This project show three buttons on the screen. One let you add more pacmen on the screen at a random position. The second one let you create ghosts. The last one make them move. The original project was to create pacmen with a regular height and width. I updated it to make their size random.
 
 ## How to run
 > Simply launch the index.html on your browser and you are good to go.
