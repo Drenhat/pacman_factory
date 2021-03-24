@@ -20,7 +20,6 @@ var pos = 0;
         // returns an object with random values scaled {x: 33, y: 21}
         let velocity = setToRandom(10); // {x:?, y:?}
         let position = setToRandom(200);
-        //console.log(position)
         // Add image to div id = game
         let game = document.getElementById('game');
         let newimg = document.createElement('img');
@@ -71,7 +70,6 @@ var pos = 0;
     function update() {
         //loop over pacmen array and move each one and move image in DOM
         pacMen.forEach((item) => {
-          console.log(item.position.y)
             checkCollisions(item)
             item.position.x += item.velocity.x;
             item.position.y += item.velocity.y;
